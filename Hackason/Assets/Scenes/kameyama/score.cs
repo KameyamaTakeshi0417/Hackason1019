@@ -6,6 +6,7 @@ using TMPro;  // TextMeshProの名前空間をインポートする
 public class score : MonoBehaviour
 {
      public int scorePoint;
+     public int toClearPoint=2500;
       public GameObject score_object = null; // Textオブジェクト
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class score : MonoBehaviour
     }
     public void AddScore(int num){
         scorePoint+=num;
-        if(scorePoint>=1000){
+        if(scorePoint>=toClearPoint){
             gameObject.GetComponent<sceneManager>().OnLoadSceneSingle();
         }
     }
