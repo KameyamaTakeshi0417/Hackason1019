@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
     public GameObject pauseMenuUI;  // ポーズ画面のUIを表示/非表示にするためのオブジェクト
-
+public GameObject SoundCanvas;
     private bool isPaused = false;  // ポーズ状態を管理
 
     void Start()
     {
         // 初期起動時にポーズ画面を非表示に設定
         pauseMenuUI.SetActive(false);
+        SoundCanvas.GetComponent<VolumeSetter>().canvasactivator(false);
     }
 
     void Update()
@@ -47,9 +49,21 @@ public class UIController : MonoBehaviour
         isPaused = true;
     }
 
+   public void SoundSetting(){
+        pauseMenuUI.SetActive(false);   // ポーズ画面を表示
+ SoundCanvas.GetComponent<VolumeSetter>().canvasactivator(true);
+
+    }
+
+       public void SoundSettingBack(){
+        pauseMenuUI.SetActive(true);   // ポーズ画面を表示
+ SoundCanvas.GetComponent<VolumeSetter>().canvasactivator(false);
+
+    }
     // ゲーム終了（メニューからのオプションとして）
     public void QuitGame()
     {
-        Application.Quit();  // ゲームを終了
+       // Application.Quit();  // ゲームを終了
+       GameObject.Find("gameManager").GetComponent<sceneManager>().OnLoadSceneSingle();
     }
 }
