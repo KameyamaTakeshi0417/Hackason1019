@@ -20,8 +20,14 @@ public class score : MonoBehaviour
        TextMeshProUGUI score_text = score_object.GetComponent<TextMeshProUGUI>();
         // テキストの表示を入れ替える
         score_text.text = scorePoint.ToString();
+                  if (Input.GetKey(KeyCode.Backspace)){
+            AddScore(10);
+          }
     }
     public void AddScore(int num){
         scorePoint+=num;
+        if(scorePoint>=1000){
+            gameObject.GetComponent<sceneManager>().OnLoadSceneSingle();
+        }
     }
 }

@@ -15,11 +15,12 @@ public class pin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
     }
    private void OnCollisionEnter(Collision collision){
 if(collision.gameObject.tag=="Player"){
-    GameObject.Find("scoreManager").GetComponent<score>().AddScore(addScore);
+    GameObject.Find("gameManager").GetComponent<score>().AddScore(addScore);
 }
 
    }
