@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5027725e4a629c549acfe8f5f07a80f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextscene: HnasceneCopy
+  nextscene: Game
 --- !u!4 &325343358
 Transform:
   m_ObjectHideFlags: 0
