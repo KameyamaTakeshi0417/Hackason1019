@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/kameyama/kameyama.unity
     guid: 743ebf670fa573a47949f4e455f5d1a0
+  - enabled: 1
+    path: Assets/Scenes/kameyama/HnasceneCopy.unity
+    guid: 5992d1f3429e41f4b9b35fa4a1f2ac0c
   m_configObjects: {}
