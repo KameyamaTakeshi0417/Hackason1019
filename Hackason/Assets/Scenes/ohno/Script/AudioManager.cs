@@ -14,6 +14,10 @@ public class AudioManager : MonoBehaviour
     public Slider bgmSlider;
     public Slider systemSlider;
 
+    public AudioSource sfxSource; // 効果音用のAudioSource
+    public AudioSource buttonClickSource; // 効果音用のAudioSource
+    
+
     void Start()
     {
         // スライダーの初期値を設定
@@ -85,5 +89,17 @@ public class AudioManager : MonoBehaviour
         audioMixer.SetFloat("SystemVolume", Mathf.Log10(volume) * 20);
     }
         PlayerPrefs.SetFloat("SystemVolume", volume);
+    }
+
+    // 効果音を再生するメソッド
+    public void PlaySFX(AudioClip clip)
+    {
+        sfxSource.PlayOneShot(clip); // AudioClipを一時的に再生
+    }
+
+    //ボタンクリック時の効果音を再生する
+    public void PlayButtonClickSound(AudioClip clip)
+    {
+        buttonClickSource.PlayOneShot(clip);
     }
 }
